@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
 import os
-from .env import RIOT_API_KEY
+load_dotenv()
+
+riot_api = os.getenv('RIOT_API_KEY')
+
 
