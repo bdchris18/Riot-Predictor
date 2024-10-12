@@ -1,0 +1,59 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a black background color and a background image */
+body {
+    background-image: radial-gradient(rgb(0, 3, 32), rgb(19, 35, 53));
+    color: rgb(255, 215, 0);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgb(255, 215, 0);
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid rgb(255, 215, 0);
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid rgb(255, 215, 0);
+}
