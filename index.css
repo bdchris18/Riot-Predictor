@@ -8,16 +8,18 @@ body, h1, h2, p, ul {
 
 /* Set a black background color and a background image */
 body {
-    background-image: radial-gradient(rgb(0, 3, 32), rgb(19, 35, 53));
+    background-image: repeating-radial-gradient(circle, rgb(62, 30, 206), rgb(19, 35, 53));
     color: rgb(255, 215, 0);
-    font-family: Arial, sans-serif;
+    font-family: 'Gill Sans MT', sans-serif;
     line-height: 1.6;
+
 }
 
 /* Header styles */
 header {
+    text-shadow: 2px 2px 4px white;
     padding: 20px;
-    text-align: center;
+    text-align-last: center;
     border-bottom: 2px solid rgb(255, 215, 0);
     background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
 }
@@ -40,7 +42,8 @@ nav ul li a {
 
 /* Main content styles */
 main {
-    padding: 20px;
+    padding-right: 200px;
+    text-align: center;
 }
 
 /* Section styles */
@@ -57,3 +60,10 @@ footer {
     padding: 10px 0;
     border-top: 2px solid rgb(255, 215, 0);
 }
+
+
+img{
+    float: left;
+    padding-bottom: 40px;
+}
+
