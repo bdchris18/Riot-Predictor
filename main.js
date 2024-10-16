@@ -6,12 +6,8 @@ const gameName = "Kabir Wahid"
 const tagLine = "BIG"
 
 
-let puuid;  //puuid
-let sumid;  //summoner ID
-let sdTier; //solo duo tier
-let sdRank; //solo duo rank
-let sdWins, sdLosses, sdLP; // ranked wins and losses
-
+let puuid, sumid, sdTier, sdRank, sdWins, sdLosses, sdLP; // Player Identification and Ranked Stats
+let matchList, singleMatch; //Match Variables
 const riot_url = `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}?api_key=${riot_api}`;
 
 axios.get(riot_url)
@@ -38,12 +34,16 @@ axios.get(riot_url)
 
         sdWins = dataJson['wins'];
         sdLosses = dataJson['losses'];
-        
-        console.log(sdTier + " " + sdRank + " " + sdLP + "LP")
-        console.log(sdWins + "W" + " " + sdLosses + "L" )
 
+        console.log(sdTier + " " + sdRank + " " + sdLP + "LP")
+        console.log(sdWins + "W" + " " + sdLosses + "L")
+
+        const match_url = `https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${encodeURIComponent(puuid)}/ids?start=0&count=20&api_key=${riot_api}`;
+        return axios.get(match_url);
     })
     .then(response => {
+        const dataJson = response.data; //this will be a matchList
+        const single_Match_URL = `https://americas.api.riotgames.com/lol/match/v5/matches/${encodeURIComponent(singleMatch)}1?api_key=${riot_api}`
 
     })
     .catch(error => {
