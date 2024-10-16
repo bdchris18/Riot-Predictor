@@ -8,8 +8,9 @@ const tagLine = "BIG"
 
 let puuid;  //puuid
 let sumid;  //summoner ID
-let sdTier  //solo duo tier
+let sdTier; //solo duo tier
 let sdRank; //solo duo rank
+let sdWins, sdLosses, sdLP; // ranked wins and losses
 
 const riot_url = `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}?api_key=${riot_api}`;
 
@@ -33,8 +34,17 @@ axios.get(riot_url)
         const dataJson = response.data[0];
         sdTier = dataJson['tier'];
         sdRank = dataJson['rank'];
-        console.log(sdTier)
-        console.log(sdRank)
+        sdLP = dataJson['leaguePoints']
+
+        sdWins = dataJson['wins'];
+        sdLosses = dataJson['losses'];
+        
+        console.log(sdTier + " " + sdRank + " " + sdLP + "LP")
+        console.log(sdWins + "W" + " " + sdLosses + "L" )
+
+    })
+    .then(response => {
+
     })
     .catch(error => {
         console.error('Error fetching data:', error);
